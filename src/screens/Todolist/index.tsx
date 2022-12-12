@@ -1,12 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
+import { Header } from '@components/Header';
 import { StyleSheet, Text, View } from 'react-native';
 import { Container } from './styles';
 
 export function Todolist() {
   return (
     <Container>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Header/>
     </Container>
   );
 }
