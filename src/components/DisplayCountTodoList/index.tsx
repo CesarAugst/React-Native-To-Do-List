@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import { Container, CounterDisplay, Pill, Count } from "./styles";
+import { Container, CounterDisplay } from "./styles";
 
 type Props = {
     criadasCount: String,

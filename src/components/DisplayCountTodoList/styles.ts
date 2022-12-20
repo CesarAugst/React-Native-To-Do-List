@@ -15,10 +15,3 @@ export const CounterDisplay = styled.Text`
         font-size: ${theme.FONT_SIZE.SM}px;
     `};
 `;
-
-export const Count = styled.Text`
-     ${({ theme }) => css`
-        background-color: ${theme.COLORS.GRAY_400};
-    `};
-    border-radius: 5px;
-`;
