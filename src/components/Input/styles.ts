@@ -13,6 +13,4 @@ export const Container = styled(TextInput)`
     max-height: 56px;
     border-radius: 6px;
     padding: 16px;
-    margin: 0 24px;
-    margin-top: -25px;
 `;

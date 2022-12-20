@@ -9,7 +9,7 @@ export default {
       RED: '#F75A68',
       RED_DARK: '#AA2834',
 
-      BLUE_700: '#4EA8DE',
+      BLUE: '#4EA8DE',
       BLUE_DARK: '#1E6F9F',
 
       PURPLE: '#8284FA',
