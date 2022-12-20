@@ -10,9 +10,11 @@ import { Container, Content } from './styles';
 export function Todolist() {
 
   const [todoList, setTodoList] = useState([{title: 'Limpar a casa', finished: false}, {title: 'Estudar React', finished: true}]);
+  const [todoTitle, setTodoTitle] = useState('');
 
   function handleTodoAdd(){
-    setTodoList(prevState => [...prevState, {title: 'Limpar a casa', finished: false}] )
+    console.log(todoTitle)
+    setTodoList(prevState => [...prevState, {title: todoTitle, finished: false}] )
   }
   function handleTodoRemove(title: string){
     Alert.alert('Remover', 'Remover a tarefa?', [
@@ -31,7 +33,10 @@ export function Todolist() {
     <Container>
       <Header/>
       <Content>
-        <Input placeholder='Adicione uma nova tarefa... '/>
+        <Input 
+          placeholder='Adicione uma nova tarefa... '
+          onChangeText={text => setTodoTitle(text)}
+        />
         <ButtonIcon
           onPress={handleTodoAdd}
           icon='add-circle-outline'
