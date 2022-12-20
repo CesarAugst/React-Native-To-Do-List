@@ -3,14 +3,28 @@ import { DisplayCountTodoList } from '@components/DisplayCountTodoList';
 import { Header } from '@components/Header';
 import { Input } from '@components/Input';
 import { TodoCard } from '@components/TodoCard';
-import { FlatList, Text } from 'react-native';
+import { useState } from 'react';
+import { Alert, FlatList, Text } from 'react-native';
 import { Container, Content } from './styles';
 
 export function Todolist() {
-  const todoList = ['Limpar a casa', 'Estudar React', 'Terminar dashboard']
+
+  const [todoList, setTodoList] = useState([{title: 'Limpar a casa', finished: false}, {title: 'Estudar React', finished: true}]);
 
   function handleTodoAdd(){
-    console.log('clicou')
+    setTodoList(prevState => [...prevState, {title: 'Limpar a casa', finished: false}] )
+  }
+  function handleTodoRemove(title: string){
+    Alert.alert('Remover', 'Remover a tarefa?', [
+      {
+        text: 'Sim',
+        onPress: () => setTodoList(prevState => prevState.filter(todoList => todoList.title != title))
+      },
+      {
+        text: 'Não',
+        style: 'cancel'
+      }
+    ])
   }
 
   return (
@@ -26,10 +40,12 @@ export function Todolist() {
       <DisplayCountTodoList criadasCount={todoList.length.toString()} concluidasCount="0"/>
       <FlatList
         data={todoList}
-        keyExtractor={item => item}
+        keyExtractor={item => item.title}
         renderItem={({item}) => (
           <TodoCard
-            title={item}
+            title={item.title}
+            finished={item.finished}
+            onPressRemove={handleTodoRemove(item.title)}
           />
         )}
         ListEmptyComponent={() => (
