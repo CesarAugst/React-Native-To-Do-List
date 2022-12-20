@@ -6,7 +6,7 @@ import theme from "src/theme";
 export const Container = styled(TouchableOpacity)`
     ${({ theme}) => css`
         background-color: ${theme.COLORS.BLUE_DARK};
-    `}
+    `};
     width: 56px;
     height: 56px;
     justify-content: center;

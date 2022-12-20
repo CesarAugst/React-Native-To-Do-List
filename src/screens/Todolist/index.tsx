@@ -2,6 +2,7 @@ import { ButtonIcon } from '@components/ButtonIcon';
 import { DisplayCountTodoList } from '@components/DisplayCountTodoList';
 import { Header } from '@components/Header';
 import { Input } from '@components/Input';
+import { TodoCard } from '@components/TodoCard';
 import { FlatList, Text } from 'react-native';
 import { Container, Content } from './styles';
 
@@ -27,7 +28,9 @@ export function Todolist() {
         data={todoList}
         keyExtractor={item => item}
         renderItem={({item}) => (
-          <Text>{item}</Text>
+          <TodoCard
+            title={item}
+          />
         )}
         ListEmptyComponent={() => (
           <Text>Vazio</Text>
