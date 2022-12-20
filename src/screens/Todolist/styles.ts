@@ -11,4 +11,5 @@ export const Content = styled.View`
     justify-content: center;
     padding: 24px;
     margin-top: -50px;
+    max-height: 100px;
 `;

@@ -1,4 +1,5 @@
 import { ButtonIcon } from '@components/ButtonIcon';
+import { DisplayCountTodoList } from '@components/DisplayCountTodoList';
 import { Header } from '@components/Header';
 import { Input } from '@components/Input';
 import { StyleSheet, Text, View } from 'react-native';
@@ -14,6 +15,7 @@ export function Todolist() {
           icon='add-circle-outline'
         />
       </Content>
+      <DisplayCountTodoList criadasCount="0" concluidasCount="0"/>
     </Container>
   );
 }
