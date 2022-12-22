@@ -1,7 +1,7 @@
-import { TouchableOpacityProps } from "react-native";
+import { GestureResponderEvent, TouchableOpacityProps } from "react-native";
 import { Container, DeleteTodo, Icon, Title, ConfirmTodo, VerifiedIcon } from "./styles";
 
-type Props = {
+type Props = TouchableOpacityProps & {
     title: String,
     finished: boolean,
     onPressRemove: () => void,
